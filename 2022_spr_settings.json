@@ -1,0 +1,65 @@
+{
+    "year": 2022,
+    "groups": {
+        "male": [
+            {
+                "name": "D0",
+                "color": "green",
+                "from": 0,
+                "to": 8
+            },
+            {
+                "name": "D9",
+                "color": "limegreen",
+                "from": 9,
+                "to": 14
+            },
+            {
+                "name": "M15",
+                "color": "dodgerblue",
+                "from": 15,
+                "to": 34
+            },
+            {
+                "name": "M35",
+                "color": "blue",
+                "from": 35,
+                "to": 150
+            }
+        ],
+        "female": [
+            {
+                "name": "D0",
+                "color": "green",
+                "from": 0,
+                "to": 8
+            },
+            {
+                "name": "D9",
+                "color": "limegreen",
+                "from": 9,
+                "to": 14
+            },
+            {
+                "name": "Ž15",
+                "color": "darkred",
+                "from": 15,
+                "to": 34
+            },
+            {
+                "name": "Ž35",
+                "color": "crimson",
+                "from": 35,
+                "to": 150
+            }
+        ],
+        "dog": [
+            {
+                "name": "Š",
+                "color": "",
+                "from": 0,
+                "to": 150
+            }
+        ]
+    }
+}

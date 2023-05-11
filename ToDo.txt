@@ -1,0 +1,2 @@
+- automaticky velke prvni pismeno ve jmene
+- nastavit zena kdyz prijmeni konci 'ova'

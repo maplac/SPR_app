@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="editor.js"></script>
+    <title>Sprint Proti Radaru</title>
+</head>
+
+<body>
+
+    <div id="idModalMessage" class="modal-compact">
+        <div class="modal-content">
+            <div id="modalHeaderContainer" class="modal-header">
+                <span class="close">&times;</span>
+                <span id="modalTimerCounter"></span>
+                <span id="modalHeaderText">Modal header</span>
+            </div>
+            <div id="modalBodyText" class="modal-body">
+                Some text in the Modal Body
+            </div>
+        </div>
+    </div>
+
+    <div id="idModalWindow" class="modal">
+        <div class="modal-content">
+            <div id="modalWindowHeaderContainer" class="modal-header">
+                <span id="modalWindowHeaderText"></span>
+            </div>
+            <div id="modalWindowBody" class="modal-body">
+                <table class="parameters-table" id="parametersTable">
+                    <tr>
+                        <td><label>Id:</label></td>
+                        <td><input type="text" id="paramId" name="id" readonly value="3"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Jméno:</label></td>
+                        <td><input type="text" id="paramName" name="name" value="jméno" autocomplete="on"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Příjmení:</label></td>
+                        <td><input type="text" id="paramSurname" list="datalistSurname" name="surname" value="příjmení"
+                                autocomplete="on">
+                            <datalist id="datalistSurname"></datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Rok narození:</label></td>
+                        <td><input type="text" id="paramYear" name="year" value="1995" oninput="specialCharToNumber(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Pohlaví:</label></td>
+                        <td>
+                            <input type="radio" id="paramSexMale" name="sex" value="male" checked><label
+                                for="paramSexMale">Muž</label>
+                            <input type="radio" id="paramSexFemale" name="sex" value="female"><label
+                                for="paramSexFemale">Žena</label>
+                            <input type="radio" id="paramSexDog" name="sex" value="dog"><label
+                                for="paramSexDog">Šelma</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Klub:</label></td>
+                        <td><input type="text" id="paramclub" list="datalistClub" name="club" value="Horní Dolní">
+                            <datalist id="datalistClub"></datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Počet běhů:</label></td>
+                        <td><input type="text" id="paramruncount" name="runcount" value="5" oninput="specialCharToNumber(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Rychlosti:</label></td>
+                        <td>
+                            <input type="text" id="paramspeed0" name="speed0" size="2" value="" oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed1" name="speed1" size="2" value="" oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed2" name="speed2" size="2" value="" oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed3" name="speed3" size="2" value="" oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed4" name="speed4" size="2" value="" oninput="specialCharToNumber(this)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <span id="modalWindowFooter" class="modal-footer">
+                <button id="modalWindowApply" class="modal-window-button">Uložit</button>
+                <button id="modalWindowCancel" class="modal-window-button" onclick="modalCancel()">Zrušit</button>
+            </span>
+        </div>
+    </div>
+
+    <!--<div id="idModalDialog" class="modal">
+        <div class="modal-content">
+            <div class="modal-header color-info">
+                <span id="modalDialogHeaderText">Confirmation</span>
+            </div>
+            <div id="modalDialogBodyText" class="modal-body"></div>
+            <span id="modalDialogFooter" class="modal-footer">
+                <button id="modalDialogCancel" class="modal-window-button">Cancel</button>
+                <button id="modalDialogOk" class="modal-window-button">Ok</button>
+            </span>
+        </div>
+    </div>-->
+
+    <div id="content">
+        <input id="filter" type="text" value="" list="datalistCont" onblur="filterCanceled()" onfocus="filterFocused()"
+            oninput="filterChanged()" />
+        <datalist id="datalistCont">
+        </datalist>
+        <button id="buttonExportCsv" onclick="exportCsv()">Export CSV</button>
+        <!--<button id="buttonDownload" onclick="downloadContestants()" disabled>Download</button>-->
+        <a id="buttonDownloadCsv" href="javascript: void(0);" download="" class="button-disabled">Download CSV</a>
+        <a  href="/scoreboard.html">Výsledky</a>
+        <a  href="/help.html">Nápověda</a>
+        <!--<button id="buttonTest" onclick="testFunction()">Test</button>-->
+
+        <table class="overview-table" id="overviewTable">
+            <tr>
+                <!--<th><button id="buttonAddContestant" onclick="addContestant()">Nový</button></th>-->
+                <th>Id</th>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+                <th>Kat.</th>
+                <th>Max</th>
+                <th>Poř.</th>
+                <th>Poř. kat.</th>
+                <th>Klub</th>
+                <th>Poč. běhů</th>
+                <th>Běh 1</th>
+                <th>Běh 2</th>
+                <th>Běh 3</th>
+                <th>Běh 4</th>
+                <th>Běh 5</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
