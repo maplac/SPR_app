@@ -199,6 +199,10 @@ tr {
   padding: 5px;
 }
 
+#content > input{
+  margin-left: 10px;
+}
+
 .overview-table td, .overview-table th,
 .scoreboard-table td, .scoreboard-table th {
   padding: 2px 10px;
@@ -261,6 +265,11 @@ tr {
 #tableHelp {
   font-size: 14px;
   margin-top: 10px;
+  vertical-align: top;
+}
+
+#tableHelp td{
+  vertical-align: top;
 }
 
 #tableHelp th {

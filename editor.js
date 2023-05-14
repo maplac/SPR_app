@@ -287,6 +287,29 @@ function specialCharToNumber(el) {
     el.value = val;
 }
 
+function onNameChange(el) {
+    var val = el.value.split('').join('');
+    if (val.length === 0) {
+        return;
+    }
+    val = val.charAt(0).toUpperCase() + val.slice(1);
+    el.value = val;
+}
+
+function onSurnameChange(el) {
+    var val = el.value.split('').join('');
+    if (val.length === 0) {
+        return;
+    }
+    val = val.charAt(0).toUpperCase() + val.slice(1);
+    el.value = val;
+    if (document.getElementById('paramSexFemale')) {
+        if (val.endsWith('ová') || val.endsWith('ova')) {
+            document.getElementById('paramSexFemale').checked = true;
+        }
+    }
+}
+
 document.addEventListener("keydown", (event) => {
     if (filterInFocus) {
         if (event.key === "Escape" || event.key === "Esc") {

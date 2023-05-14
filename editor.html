@@ -38,18 +38,20 @@
                     </tr>
                     <tr>
                         <td><label>Jméno:</label></td>
-                        <td><input type="text" id="paramName" name="name" value="jméno" autocomplete="on"> </td>
+                        <td><input type="text" id="paramName" name="name" value="jméno" autocomplete="on"
+                                oninput="onNameChange(this)"> </td>
                     </tr>
                     <tr>
                         <td><label>Příjmení:</label></td>
                         <td><input type="text" id="paramSurname" list="datalistSurname" name="surname" value="příjmení"
-                                autocomplete="on">
+                                autocomplete="on" oninput="onSurnameChange(this)">
                             <datalist id="datalistSurname"></datalist>
                         </td>
                     </tr>
                     <tr>
                         <td><label>Rok narození:</label></td>
-                        <td><input type="text" id="paramYear" name="year" value="1995" oninput="specialCharToNumber(this)"></td>
+                        <td><input type="text" id="paramYear" name="year" value="1995"
+                                oninput="specialCharToNumber(this)"></td>
                     </tr>
                     <tr>
                         <td><label>Pohlaví:</label></td>
@@ -70,16 +72,22 @@
                     </tr>
                     <tr>
                         <td><label>Počet běhů:</label></td>
-                        <td><input type="text" id="paramruncount" name="runcount" value="5" oninput="specialCharToNumber(this)"></td>
+                        <td><input type="text" id="paramruncount" name="runcount" value="5"
+                                oninput="specialCharToNumber(this)"></td>
                     </tr>
                     <tr>
                         <td><label>Rychlosti:</label></td>
                         <td>
-                            <input type="text" id="paramspeed0" name="speed0" size="2" value="" oninput="specialCharToNumber(this)">
-                            <input type="text" id="paramspeed1" name="speed1" size="2" value="" oninput="specialCharToNumber(this)">
-                            <input type="text" id="paramspeed2" name="speed2" size="2" value="" oninput="specialCharToNumber(this)">
-                            <input type="text" id="paramspeed3" name="speed3" size="2" value="" oninput="specialCharToNumber(this)">
-                            <input type="text" id="paramspeed4" name="speed4" size="2" value="" oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed0" name="speed0" size="2" value=""
+                                oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed1" name="speed1" size="2" value=""
+                                oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed2" name="speed2" size="2" value=""
+                                oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed3" name="speed3" size="2" value=""
+                                oninput="specialCharToNumber(this)">
+                            <input type="text" id="paramspeed4" name="speed4" size="2" value=""
+                                oninput="specialCharToNumber(this)">
                         </td>
                     </tr>
                 </table>
@@ -112,8 +120,8 @@
         <button id="buttonExportCsv" onclick="exportCsv()">Export CSV</button>
         <!--<button id="buttonDownload" onclick="downloadContestants()" disabled>Download</button>-->
         <a id="buttonDownloadCsv" href="javascript: void(0);" download="" class="button-disabled">Download CSV</a>
-        <a  href="/scoreboard.html">Výsledky</a>
-        <a  href="/help.html">Nápověda</a>
+        <a href="/scoreboard.html">Výsledky</a>
+        <a href="/help.html">Nápověda</a>
         <!--<button id="buttonTest" onclick="testFunction()">Test</button>-->
 
         <table class="overview-table" id="overviewTable">
@@ -137,4 +145,5 @@
         </table>
     </div>
 </body>
+
 </html>
