@@ -37,15 +37,21 @@
                         <td><input type="text" id="paramId" name="id" readonly value="3"></td>
                     </tr>
                     <tr>
+                        <td><label>Příjmení:</label></td>
+                        <td><input type="text" id="paramSurname" list="datalistSurname" name="surname" value="příjmení"
+                                autocomplete="on" oninput="onSurnameChange(this)">
+                            <datalist id="datalistSurname"></datalist>
+                        </td>
+                    </tr>
+                    <tr>
                         <td><label>Jméno:</label></td>
                         <td><input type="text" id="paramName" name="name" value="jméno" autocomplete="on"
                                 oninput="onNameChange(this)"> </td>
                     </tr>
                     <tr>
-                        <td><label>Příjmení:</label></td>
-                        <td><input type="text" id="paramSurname" list="datalistSurname" name="surname" value="příjmení"
-                                autocomplete="on" oninput="onSurnameChange(this)">
-                            <datalist id="datalistSurname"></datalist>
+                        <td><label>Klub:</label></td>
+                        <td><input type="text" id="paramclub" list="datalistClub" name="club" value="Horní Dolní">
+                            <datalist id="datalistClub"></datalist>
                         </td>
                     </tr>
                     <tr>
@@ -62,12 +68,6 @@
                                 for="paramSexFemale">Žena</label>
                             <input type="radio" id="paramSexDog" name="sex" value="dog"><label
                                 for="paramSexDog">Šelma</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Klub:</label></td>
-                        <td><input type="text" id="paramclub" list="datalistClub" name="club" value="Horní Dolní">
-                            <datalist id="datalistClub"></datalist>
                         </td>
                     </tr>
                     <tr>

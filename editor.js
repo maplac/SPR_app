@@ -22,7 +22,7 @@ function addContestant() {
         populateConfigTable('parametersTable', data);
     });
     modalWindow.show("Nový závodník", modalApplyEdit);
-    document.getElementById("paramName").focus();
+    document.getElementById("paramSurname").focus();
 }
 
 function editContestant(id) {
@@ -35,8 +35,8 @@ function editContestant(id) {
                 el.value = data.contestant.speed[i];
             }
         }
-        document.getElementById("paramName").focus();
-        document.getElementById("paramName").select();
+        document.getElementById("paramSurname").focus();
+        document.getElementById("paramSurname").select();
     });
     modalWindow.show("Úprava závodníka", modalApplyEdit);
 }
